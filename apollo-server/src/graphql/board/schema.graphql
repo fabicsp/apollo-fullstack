@@ -1,0 +1,20 @@
+
+
+type Board {
+  id: Int
+  players: Int,
+  type: Int,
+  title: String,
+  description: String,
+  counter: Counter
+}
+
+input BoardWhere {
+  id: Int
+  filterText: String
+}
+
+type Query {
+  getBoard(where: BoardWhere!): Board
+  getBoards(where: BoardWhere!, limit: Int, offset: Int): [Board]
+}

@@ -1,0 +1,12 @@
+
+type User {
+  id: Int
+  email: String
+  idEmail: String
+  # Boards that related to the user
+  boards: [Board]
+}
+
+type Query {
+  getUser: User
+}

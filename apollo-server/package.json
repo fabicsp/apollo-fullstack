@@ -1,0 +1,26 @@
+{
+  "name": "apollo-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node --experimental-worker ./dist",
+    "build": "rimraf dist && tsc && npm run build:copy-graphql",
+    "build:copy-graphql": "find src -type f | grep '.graphql$' | sed -e 's/^src//' | xargs -I {} cp src/{} dist/{}"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "schemaglue": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^14.14.9",
+    "typescript": "^4.1.2",
+    "rimraf": "^3.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+
+
+type Counter {
+  current: Int
+  currentAsString: String
+}
+
+type Mutation {
+  addOne: Int
+  addMany(amount: Int): Counter 
+}
+
+type Query {
+  getCount: Counter
+}
